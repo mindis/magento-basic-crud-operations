@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+   	<!--  activates the module -->
+     <modules>
+        <Inkatia_Basiccrud>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Inkatia_Basiccrud>
+     </modules>
+</config>

@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<config>
+
+	<modules>
+		<Inkatia_Basiccrud>
+			<version>1.0.0</version>
+		</Inkatia_Basiccrud>
+	</modules>
+	
+	<!-- Call Controller && Update Layout -->
+	<frontend>
+		<routers>
+		   <basiccrud>
+			   <use>standard</use>
+			   <args>
+				   <module>Inkatia_Basiccrud</module>
+				   <frontName>basiccrud</frontName>
+			   </args>
+		   </basiccrud>
+		</routers>
+		<layout>
+			  <updates>
+				  <basiccrud module="Inkatia_Basiccrud">
+					  <!-- Updates the Module Layout at default/layout/inkatia_basiccrud.xml -->
+					  <file>inkatia_basiccrud.xml</file>
+				  </basiccrud>
+			  </updates>
+		</layout>
+	</frontend>
+
+	<!-- Calls class's located at: app/code/local/< Company >/ < Module Name >/ <Model | Helper | Block> -->
+	<global>
+	
+		<!-- Database Handling -->
+		<models>
+            <basiccrud>
+                <class>Inkatia_Basiccrud_Model</class>
+                <resourceModel>basiccrud_mysql4</resourceModel>
+            </basiccrud>
+            <basiccrud_mysql4>
+                <class>Inkatia_Basiccrud_Model_Mysql4</class>
+                <entities>
+                    <basiccrud>
+                        <table>basiccrud</table>
+                    </basiccrud>
+                </entities>
+            </basiccrud_mysql4>
+        </models>
+        <resources>
+            <basiccrud_setup>
+                <setup>
+                    <module>Inkatia_Basiccrud</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </basiccrud_setup>
+            <basiccrud_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </basiccrud_write>
+            <basiccrud_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </basiccrud_read>
+        </resources>
+        
+        <!-- Helpers Handling -->
+		<helpers>
+			<basiccrud>
+				<class>Inkatia_Basiccrud_Helper</class>
+			</basiccrud>
+		</helpers>
+		
+		<!-- Blocks Handling -->
+		<blocks>
+		    <basiccrud>
+				<class>Inkatia_Basiccrud_Block</class>
+			</basiccrud>
+		</blocks>
+		
+	</global>
+	
+</config>
