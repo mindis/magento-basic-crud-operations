@@ -1,0 +1,32 @@
+<?php $collection = $this->_getModel()->getCollection(); ?>
+<button  type="button" title="<?php echo $this->__('Create') ?>" class="button" onclick="window.location='<?php echo $this->getUrl("basiccrud/index/create/"); ?>';"><span><span><?php echo $this->__('Create') ?></span></span></button>
+<div class="basiccrud-operations">
+	<div class="page-title">
+        <h1><?php echo $this->__('Basic Crud Operations') ?></h1>
+    </div>
+   <table>
+		<tr>
+			<td><?php echo $this->__('Name'); ?></td>
+			<td><?php echo $this->__('Email'); ?></td>
+			<td><?php echo $this->__('Message'); ?></td>
+			<td><?php echo $this->__('Operations'); ?></td>
+		</tr>
+		<?php foreach( $collection->getData() as $row ){ ?>
+			<tr>
+				<td><?php echo $this->escapeHtml($row['name']); ?></td>
+				<td><?php echo $this->escapeHtml($row['email']); ?></td>
+				<td><?php echo $this->escapeHtml($row['message']); ?></td>
+				<td>
+					<a class="f-left" href="<?php echo $this->getUrl("basiccrud/index/editform/id/" . $this->escapeHtml($row['basiccrud_id']) ); ?>" title="<?php echo $this->__('Click to Edit');  ?>" />
+						<?php echo $this->__('Edit'); ?>
+					</a>
+				</td>
+				<td>
+					<a class="f-left" href="<?php echo $this->getUrl("basiccrud/index/delete/id/" . $this->escapeHtml($row['basiccrud_id']) ); ?>" title="<?php echo $this->__('Click to Delete');  ?>" />
+						<?php echo $this->__('Delete'); ?>
+					</a>
+				</td>
+			</tr>
+		<?php } ?>
+	</table>
+</div>

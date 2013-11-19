@@ -1,0 +1,35 @@
+<?php
+	
+	$getDataId		= Mage::app()->getRequest()->getParam('id');
+	$data_dump  	= Mage::getModel('basiccrud/basiccrud')
+							->load( $getDataId )
+							->getData();
+			
+	if( empty($data_dump) ){
+		Mage::app()
+			->getFrontController()
+			->getResponse()
+			->setRedirect(
+				$this->getUrl("basiccrud/")
+			);
+	}
+
+?>
+<div class="basiccrud-form">
+	<h1>Basic Crud Form</h1>
+	<form name="myform" action="<?php echo $this->getUrl('basiccrud/index/edit/id/' .$this->escapeHtml($data_dump['basiccrud_id'] )); ?>" method="POST" >
+		<div align="left">
+			<br>
+			Indique o seu Nome:<br>
+			<input name="name" type="text" size="25" value="<?php echo $this->escapeHtml($data_dump['name']) ?>">
+			<br>
+			Indique o seu Email:<br>
+			<input name="email" type="text" size="25" value="<?php echo $this->escapeHtml($data_dump['email']) ?>">
+			<br>
+			Indique a sua Mensagem:<br>
+			<input name="message" type="text" size="25" value="<?php echo $this->escapeHtml($data_dump['message']) ?>">
+			<br>
+			<br><input type="submit" value="Submit"><br>
+		</div>
+	</form>
+</div>

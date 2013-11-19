@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <!--  Layouts For Crud Operations EXtending from core/template -->
+    <!-- <module name>_<controler name>_<controller action> -->
+    <basiccrud_index_index>
+    	<reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setHeaderTitle" translate="title" module="basiccrud"><title>Look Sugerido</title></action>
+        </reference>
+        <reference name="head">
+        	<action method="addCss">
+				<stylesheet>css/inkatia/basiccrud/default.css</stylesheet>
+				<position>50</position>
+			</action> 
+        </reference>
+        <reference name="content">
+			<block type="basiccrud/basiccrud" name="basiccrud_list" as="basiccrud_list" template="inkatia_basiccrud/list.phtml" />
+		</reference>
+    </basiccrud_index_index>
+    
+    <basiccrud_index_create>
+    	<reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setHeaderTitle" translate="title" module="basiccrud"><title>Look Sugerido</title></action>
+        </reference>
+         <reference name="head">
+        	<action method="addCss">
+				<stylesheet>css/inkatia/basiccrud/default.css</stylesheet>
+				<position>50</position>
+			</action> 
+        </reference>
+        <reference name="content">
+			<block type="basiccrud/basiccrud" name="basiccrud_create" as="basiccrud_create" template="inkatia_basiccrud/create.phtml" />
+		</reference>
+    </basiccrud_index_create>
+    
+    <basiccrud_index_editform>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setHeaderTitle" translate="title" module="basiccrud"><title>Look Sugerido</title></action>
+        </reference>
+         <reference name="head">
+        	<action method="addCss">
+				<stylesheet>css/inkatia/basiccrud/default.css</stylesheet>
+				<position>50</position>
+			</action> 
+        </reference>
+        <reference name="content">
+			<block type="basiccrud/basiccrud" name="basiccrud_edit" as="basiccrud_edit" template="inkatia_basiccrud/editform.phtml" />
+		</reference>
+        
+    </basiccrud_index_editform>
+    
+    <basiccrud_index_edit>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setHeaderTitle" translate="title" module="basiccrud"><title>Look Sugerido</title></action>
+        </reference>
+         <reference name="head">
+        	<action method="addCss">
+				<stylesheet>css/inkatia/basiccrud/default.css</stylesheet>
+				<position>50</position>
+			</action> 
+        </reference>
+        <reference name="content">
+			<block type="basiccrud/basiccrud" name="basiccrud_edit" as="basiccrud_edit" template="inkatia_basiccrud/edit.phtml" />
+		</reference>
+        
+    </basiccrud_index_edit>
+    
+    <!--  Default Block Template  -->
+    <basiccrud_index_save>
+    	<reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setHeaderTitle" translate="title" module="basiccrud"><title>Look Sugerido</title></action>
+        </reference>
+         <reference name="head">
+        	<action method="addCss">
+				<stylesheet>css/inkatia/basiccrud/default.css</stylesheet>
+				<position>50</position>
+			</action> 
+        </reference>
+        <reference name="content">
+			<block type="core/template" name="basiccrud_save" as="basiccrud_save" template="inkatia_basiccrud/save.phtml" />
+		</reference>
+        
+    </basiccrud_index_save>
+    
+</layout>

@@ -1,0 +1,20 @@
+<div class="basiccrud-form">
+	<div class="page-title">
+        <h1><?php echo $this->__('Basic Crud Form') ?></h1>
+    </div>
+	<form name="myform" action="<?php echo $this->getUrl('basiccrud/index/save'); ?>" method="POST" >
+		<div align="left">
+			Indique o seu Nome:<br>
+			<input name="name" type="text" size="25" value="">
+			<br>
+			Indique o seu Email:<br>
+			<input name="email" type="text" size="25" value="">
+			<br>
+			Indique a sua Mensagem:<br>
+			<input name="message" type="text" size="25" value="">
+			<br>
+			<input type="submit" value="Submit">
+			<br>
+		</div>
+	</form>
+</div>
